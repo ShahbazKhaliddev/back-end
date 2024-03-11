@@ -1,30 +1,30 @@
 const express = require("express");
 const router = express.Router();
-require("../config/conn");
+
 // importing controllers
 const productController = require("../controllers/Product");
-// const createProduct = require("../controllers/Product");
-// const fetchAllProducts = require("../controllers/Product");
-// const fetchProductById = require("../controllers/Product");
-// const updateProduct = require("../controllers/Product");
+const createProduct = require("../controllers/Product");
+const fetchAllProducts = require("../controllers/Product");
+const fetchProductById = require("../controllers/Product");
+const updateProduct = require("../controllers/Product");
 const brandController = require("../controllers/Brand");
-// const createBrand = require("../controllers/Brand");
+const createBrand = require("../controllers/Brand");
 const categoryController = require("../controllers/Category");
-// const fetchCategories = require("../controllers/Category");
+const fetchCategories = require("../controllers/Category");
 const userController = require("../controllers/User");
 const cartController = require("../controllers/Cart");
-// const getItemsByUserId = require("../controllers/Cart");
-// const updateCart = require("../controllers/Cart");
-// const deleteItemFromCart = require("../controllers/Cart");
-// const resetCart = require("../controllers/Cart");
+const getItemsByUserId = require("../controllers/Cart");
+const updateCart = require("../controllers/Cart");
+const deleteItemFromCart = require("../controllers/Cart");
+const resetCart = require("../controllers/Cart");
 const orderController = require("../controllers/Order");
-// const getOrdersByUserId = require("../controllers/Order");
-// const updateOrder = require("../controllers/Order");
-// const deleteOrder = require("../controllers/Order");
-// const fetchAllOrders = require("../controllers/Order");
+const getOrdersByUserId = require("../controllers/Order");
+const updateOrder = require("../controllers/Order");
+const deleteOrder = require("../controllers/Order");
+const fetchAllOrders = require("../controllers/Order");
 
 /* ==================
-            Products routes // Malik Arslan Asif
+            Products routes
             ======================*/
 router.post("/products", productController.createProduct);
 router.get("/products", productController.fetchAllProducts);
@@ -42,12 +42,6 @@ router.get("/brands", brandController.fetchBrands);
              ======================*/
 router.post("/categories", categoryController.createCategory);
 router.get("/categories", categoryController.fetchCategories);
-
-/* ==================
-             User routes // Arslan 
-             ======================*/
-router.get("/users/:id", userController.fetchUserById);
-router.patch("/users/:id", userController.updateUserById);
 
 /* ==================
              User  auth routes
